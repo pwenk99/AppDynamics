@@ -1,10 +1,14 @@
 # AppDynamics
 Some AppDynamics things
 
-GetCpuCores.ps1 polls WMI every X seconds ($wait_time) to retrieve usage metrics for each CPU core, then sends the data to the machine agent. This metric was not available OOTB in AppDynamics when I wrote it.
-
+Windows machine agent extension to retrieve usage metrics for each CPU core, then sends the data to the machine agent. This metric was not available OOTB in AppDynamics when I wrote it.
 If you have many cores/CPUs to monitor, be careful of API rate limits when sending data from the machine agent.
 
+PowerShell version:
+GetCpuCores.ps1 polls WMI every X seconds ($wait_time) 
+monitor.xml will run the script and send the data to the machine agent. It is expecting the script to be at this path: C:\\AppD-Machine\\monitors\\GetCpuCores\\GetCpuCores.ps1
+
+Python version:
 ma_api_commented.py does the same but with python (and is a little more fleshed out). Instructions:
 
 1. Install python 3
