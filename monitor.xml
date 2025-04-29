@@ -1,0 +1,22 @@
+<monitor>
+    <name>CPU Core Monitor</name>
+    <type>managed</type>
+    <description>Monitors CPU cores on a Windows server</description>
+    <monitor-configuration>
+        <metric-prefix>Custom Metrics|CPU</metric-prefix>
+    </monitor-configuration>
+    <monitor-run-task>
+        <execution-style>continuous</execution-style>
+        <name>Run</name>
+        <type>executable</type>
+        <task-arguments>
+            <argument name="option" default-value="-executionpolicy bypass"></argument>
+            <argument name="command" default-value="-Command"></argument>
+            <argument name="file_path" default-value="C:\\AppD-Machine\\monitors\\GetCpuCores\\GetCpuCores.ps1"></argument>
+        </task-arguments>
+        <executable-task>
+            <type>command</type>
+            <command>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</command>
+        </executable-task>
+    </monitor-run-task>
+</monitor>
