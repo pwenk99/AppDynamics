@@ -1,0 +1,6 @@
+-XX:-CreateMinidumpOnCrash
+-Xms256m
+-Xmx256m
+-Dmetric.http.listener=true 
+-Dmetric.http.listener.port=8293
+-Dmetric.http.listener.host=127.0.0.1
